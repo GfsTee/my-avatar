@@ -1,0 +1,19 @@
+:root {
+    --default-px: 10;
+    --skin-color: brown;
+}
+.avatar {
+    position: relative;
+    height: calc(10 * var(--default-px))px;
+    width: 180px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head {
+    height: 80%;
+    width: 80%;
+    border-radius: 80px 80px 100px 100px;
+    background: red;
+}
