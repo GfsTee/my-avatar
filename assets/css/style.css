@@ -1,11 +1,18 @@
 :root {
-    --default-px: 10;
+    --default-px: 2rem;
     --skin-color: brown;
+    --eye-color: #000;
+    --glass-color: lime;
+    --hair-color: pink;
+}
+* {
+    margin: 0;
+    padding: 0;
 }
 .avatar {
-    position: relative;
-    height: calc(10 * var(--default-px))px;
-    width: 180px;
+    
+    height: calc(13 * var(--default-px));
+    width: calc(10 * var(--default-px));
     background: #333;
     display: flex;
     justify-content: center;
@@ -14,6 +21,90 @@
 .head {
     height: 80%;
     width: 80%;
-    border-radius: 80px 80px 100px 100px;
-    background: red;
+    border-radius: calc(3 * var(--default-px)) calc(3 * var(--default-px)) calc(5 * var(--default-px)) calc(5 * var(--default-px));
+    background-image: linear-gradient(var(--hair-color) 0, var(--hair-color) 10%, var(--skin-color) 10%) ;
+
+    position: relative;
+    border-top: 10px solid var(--hair-color);
+}
+.head::after {
+    content: '';
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: calc(3 * var(--default-px)) 0 0 0;
+
+    border-left: 10px solid var(--hair-color);
+
+    transform: translate(-3.5%, -3.5%);
+}
+.ear {
+    position: absolute;
+    height: 20%;
+    width: 10%;
+    top: 50%;
+    background: var(--skin-color);
+    transform: translate(0, -50%);
+    border-radius: 50%;
+}
+.ear.left {
+    left: -8%;
+    
+}
+.ear.right {
+    right: -8%;
+}
+.eye {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 10%;
+    width: 20%;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eye.left {
+    left: 20%;
+}
+.eye.right {
+    right: 20%;
+}
+
+.pupil {
+    height: calc(.8 * var(--default-px));
+    width: calc(.8 * var(--default-px));
+    background: var(--eye-color);
+    border-radius: 50%;
+    
+}
+.glass {
+    background: var(--glass-color);
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.glass.line {
+    width: 100%;
+    height: calc(.1 * var(--default-px));
+    top: 42%;
+}
+.glass.round {
+    height: 15%;
+    width: 25%;
+    /* background: rgba(255, 255, 255, .3); */
+    background: none;
+    background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(173, 216, 230, 0.5));
+    border-radius: calc(.3 * var(--default-px)) calc(.3 * var(--default-px)) 50% 50% ;
+    border: calc(.1 * var(--default-px)) solid var(--glass-color)
+}
+.glass.left {
+    left: 16%;
+}
+.glass.right {
+    right: 16%;
 }
