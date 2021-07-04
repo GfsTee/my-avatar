@@ -176,7 +176,7 @@
     height: 30%;
     background: rgba(39, 43, 42, 1);
     /* background: var(--hair-color); */
-    width: 0%;
+    width: 80%;
     left: 10%;
     border-radius: calc(3 * var(--default-px)) calc(3 * var(--default-px)) calc(7 * var(--default-px)) calc(7 * var(--default-px));
 }
