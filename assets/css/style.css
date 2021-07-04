@@ -1,19 +1,20 @@
 :root {
     --default-px: 2rem;
-    --skin-color: brown;
+    --skin-color: #FFCC99;
     --eye-color: #000;
-    --glass-color: lime;
-    --hair-color: pink;
+    --glass-color: grey;
+    --hair-color: #272B2A;
 }
 * {
     margin: 0;
     padding: 0;
+    /* box-sizing: border-box; */
 }
 .avatar {
     
     height: calc(13 * var(--default-px));
     width: calc(10 * var(--default-px));
-    background: #333;
+    background: #ddd;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,4 +108,75 @@
 }
 .glass.right {
     right: 16%;
+}
+.mouth {
+    width: 30%;
+    height: 8%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #AE5654;
+    border: calc(.1 * var(--default-px)) solid #E1A6A1;
+    /* outline: 5px solid var(--skin-color); */
+    border-radius: calc(.5 * var(--default-px)) calc(.5 * var(--default-px)) calc(1 * var(--default-px)) calc(1 * var(--default-px));
+    z-index: 5;
+
+}
+/* .moth-rel {
+    height: 100%;
+    width: 100%;
+    position: relative;
+} */
+.mouth::after{
+    content: '';
+    width: calc(100% - .1 * var(--default-px));
+    height: 5px;
+    border: calc(.1 * var(--default-px)) solid #E1A6A1;
+    border-radius: calc(.5 * var(--default-px)) calc(.5 * var(--default-px)) calc(1 * var(--default-px)) calc(1 * var(--default-px));
+    position: absolute;
+    z-index: -1000;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: repeating-linear-gradient(
+        90deg,
+        #fff,
+        #fff 15px,
+        #000 15px,
+        #000 16px
+      );;
+}
+.mouth::after {
+    top: 0;
+    border-radius: calc(.5 * var(--default-px)) calc(.5 * var(--default-px)) 0 0;
+    border-bottom: none;
+
+}
+.eye-brow {
+    
+    width: calc(2.5 * var(--default-px));
+    height: calc(2.5 * var(--default-px)) ;
+    border: calc(.1 * var(--default-px)) solid var(--hair-color);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    top: 33%;
+    border-radius: 50%;
+}
+.eye-brow.left {
+    left: 13%
+}
+.eye-brow.right {
+    right: 13%;
+}
+.beard {
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    background: rgba(39, 43, 42, 1);
+    /* background: var(--hair-color); */
+    width: 0%;
+    left: 10%;
+    border-radius: calc(3 * var(--default-px)) calc(3 * var(--default-px)) calc(7 * var(--default-px)) calc(7 * var(--default-px));
 }
